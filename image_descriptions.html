@@ -1,0 +1,348 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style>
+	* {
+		margin:0;
+		padding:0;
+		border:none;
+		font-size:0;
+	}
+	
+		
+	.container {
+		
+		padding:5px;
+		float:left;
+		border:1px solid black;
+		margin-left:50px;
+		margin-top:50px;
+
+
+	}
+	img {
+		display:block;		}
+	
+		
+	.schrift_von_unten {		
+			overflow:hidden;
+			}
+	
+	dl{
+		position:relative;
+		}
+		
+		.container:hover {
+		
+		cursor:pointer;
+		
+	}
+	
+	.description {
+		visibility:hidden;
+		position:absolute;
+		z-index:997;
+		top:50px;
+		left:130px;
+	}
+
+				
+	.container:hover .description
+	{
+		visibility:visible;
+		transform:scale(1.5);
+		transform:rotate(45deg);
+		transition-property:visibility, transform;
+		transition-duration:0.1s,.5s;
+		transition-delay:1s,1s;
+		
+	}
+	
+	.description_text {
+		font-size:16px;
+		color:white;
+		position:absolute;
+		z-index:998;
+		top:120px;
+		left:-296px;
+		width:100%;
+		height:35px;
+		line-height:35px;
+		display:inline-block;
+		text-align:center;
+		letter-spacing:.5em;
+		background-color:grey;
+	}
+	
+	.container:hover p.description_text
+	{
+		visibility:visible;
+		transform:translate(296px,0);
+		transition-property:visibility, transform;
+		transition-duration:0.1s,2s;
+		transition-delay:2s,1s;
+
+	}
+
+
+			
+	 .schrift_von_unten dd{
+			width:100%;
+			position:absolute;
+		
+			height:30px;
+			line-height:30px;
+			color:white;
+			background-color:rgba(35,35,35,.7);
+			text-align:center;
+			font-size:14px;
+			font-weight:bold;
+			letter-spacing:.5em;
+			transition:all 1s;
+		}
+		
+	.schrift_von_unten dt:hover + dd, .schrift_von_unten dd:hover{
+			opacity:.8;
+			transform:translate(0,-30px);
+		}	
+		
+	.schrift_von_unten dt:hover {
+			cursor:pointer;
+		}
+		
+	.schrift_von_unten p{
+			font-size:15px;
+			margin:0 10px;
+		}
+		
+		
+	.triangles {
+		position:relative;
+		overflow:hidden;
+	
+	}
+	
+	.triangles dt:after {
+		position:absolute;					/* positioniert sich an box                 */
+        right:-150px;
+  		bottom:0;
+        content:'';							/* leerer Inhalt */
+        height:0;
+        width:0;
+        border:85px solid transparent;
+    						/* graues Kaestchen unterste Ebene */
+		border-right:148px solid rgba(35,35,35,.7);
+		transition:all 1s;
+	}
+	
+	.triangles dt:before {
+		position:absolute;					/* positioniert sich an box                 */
+        left:-150px;
+  		bottom:0;
+        content:'';							/* leerer Inhalt */
+        height:0;
+        width:0;
+        border:85px solid transparent;
+    							/* graues Kaestchen unterste Ebene */
+		border-left:148px solid rgba(35,35,35,.7);
+		transition:all 1s;
+	}
+	
+	.triangles dd:before {
+		position:absolute;					/* positioniert sich an box                 */
+        right:0;
+  		top:-150px;
+        content:'';							/* leerer Inhalt */
+        height:0;
+        width:0;
+        border:148px solid transparent;
+       						/* graues Kaestchen unterste Ebene */
+		border-top:85px solid rgba(35,35,35,.7);
+		transition:all 1s;
+	}
+	
+	.triangles dd:after {
+		display:block;
+		position:absolute;					/* positioniert sich an box                 */
+        right:0;
+  		bottom:-150px;
+        content:'';							/* leerer Inhalt */
+        height:0;
+        width:0;
+        border:148px solid transparent;
+      							/* graues Kaestchen unterste Ebene */
+		border-bottom:85px solid rgba(35,35,35,.7);
+		transition:all 1s;
+	}
+
+	
+		
+	
+	 .container .triangles:hover dt:after {
+		transform:translate(-150px,0px);
+	}
+		
+	.container .triangles:hover dt:before {
+		transform:translate(150px,0px);
+	}
+
+	.container .triangles:hover dd:before {
+		transform:translate(0px,150px);
+	}
+
+	.container .triangles:hover dd:after {
+		transform:translate(0px,-150px);
+	}
+	
+	.container .jalousie {
+		overflow:hidden;
+
+	}
+	
+	.container .jalousie dl{
+		position:relative;
+	
+	}
+	
+	.jalousie dt:after{
+		position:absolute;					/* positioniert sich an box                 */
+        right:-148px;
+  		bottom:-85px;
+        content:'';							/* leerer Inhalt */
+        height:170px;
+        width:296px;
+      
+      							/* graues Kaestchen unterste Ebene */
+		border-left:148px solid rgba(35,35,35,.7);
+		border-right:148px solid rgba(35,35,35,.7);
+		border-top:85px solid rgba(35,35,35,.7);
+		border-bottom:85px solid rgba(35,35,35,.7);
+
+		transition:all 1s;
+	}
+	
+	.container .jalousie:hover dt:after{
+		height:0;
+		width:0;
+		right:0px;
+		bottom:0px;
+		
+	}
+	
+	
+	.schraeg {
+		position:relative;
+		overflow:hidden;	}
+	
+		
+	.schraeg dt:before {
+		width:400px;
+		height:300px;
+		position:absolute;
+		content:'';
+		left:-150px;
+		top:-400px;
+		background-color:rgba(35,35,35,.7);
+		transform:rotate(-29.87deg);
+		transition:all 1s;
+	}
+
+	
+	
+	.schraeg:hover dt:before {
+		transition:all 1s;
+		top:-210.5px;
+		left:-100px;
+	}
+
+		
+	
+	.schraeg dt:after {
+		width:400px;
+		height:300px;
+		position:absolute;
+		content:'';
+		right:-150px;
+		bottom:-400px;
+		background-color:rgba(35,35,35,.7);
+		transform:rotate(-29.87deg);
+		transition:all 1s;
+	}
+
+	
+	
+	.schraeg:hover dt:after {
+		transition:all 1s;
+		right:-100px;
+		bottom:-210.5px;
+	}
+	
+	
+	</style>
+	
+</head>
+<body>
+	<div class="container">
+		<dl class="schrift_von_unten">
+			<dt>
+				<img class="image" src="image.jpg" alt="Berge" width="296px" height="170px"/>
+				
+			</dt>
+			<dd>
+				<p>Berglandschaft</p>
+			</dd>
+		</dl>
+		
+		
+	</div>
+	
+	<div class="container">
+		<dl class="triangles">
+			<dt>
+				<img class="image" src="image.jpg" alt="Berge" width="296px" height="170px"/>
+				
+			</dt>
+			<dd>
+				<img class="description" src="link.gif" alt="link" width="15%" height="25%" />
+				<p class="description_text">Berglandschaft</p>	
+				
+			</dd>
+			
+
+		</dl>	
+	</div>
+
+
+<div class="container">
+		<dl class="jalousie">
+			<dt>
+				<img class="image" src="image.jpg" alt="Berge" width="296px" height="170px"/>
+			</dt>
+			<dd>
+					<img class="description" src="link.gif" alt="link" width="15%" height="25%" />		
+					<p class="description_text">Berglandschaft</p>	
+
+			</dd>
+		</dl>
+		
+		
+	</div>
+
+<div class="container">
+		<dl class="schraeg">
+			<dt>
+				<img class="image" src="image.jpg" alt="Berge" width="296px" height="170px"/>
+			</dt>
+			<dd>
+					<img class="description" src="link.gif" alt="link" width="15%" height="25%" />	
+					<p class="description_text">Berglandschaft</p>	
+			</dd>
+		</dl>
+		
+		
+	</div>
+
+</body>
+</html>
